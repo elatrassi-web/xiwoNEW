@@ -1,0 +1,98 @@
+/*
+Theme Name: XIWO AI 2030
+Theme URI: https://www.xiwo.fr/
+Author: Jules
+Author URI: https://www.xiwo.fr/
+Description: Un thème WordPress futuriste sur-mesure (Dark Mode, Glassmorphism, Néon) pour le fournisseur d'accès internet XIWO.
+Version: 1.0.0
+Text Domain: xiwo-ai
+*/
+
+:root {
+    /* Couleurs principales */
+    --color-bg: #0a0a0c;
+    --color-bg-secondary: #121216;
+    --color-text: #e0e0e0;
+    --color-text-muted: #888899;
+    --color-neon-green: #9ABA64;
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(154, 186, 100, 0.2);
+    --glass-blur: blur(16px);
+
+    /* Typographie */
+    --font-heading: 'Syncopate', sans-serif;
+    --font-body: 'Rajdhani', sans-serif;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Base Glassmorphism utility classes */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.glass-panel:hover {
+    border-color: rgba(154, 186, 100, 0.5);
+    box-shadow: 0 0 20px rgba(154, 186, 100, 0.1);
+}
+
+/* Boutons Néon */
+.btn-neon {
+    display: inline-block;
+    padding: 12px 30px;
+    color: var(--color-bg);
+    background-color: var(--color-neon-green);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    border: 2px solid var(--color-neon-green);
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(154, 186, 100, 0.4);
+}
+
+.btn-neon:hover {
+    background-color: transparent;
+    color: var(--color-neon-green);
+    box-shadow: 0 0 25px rgba(154, 186, 100, 0.6), inset 0 0 10px rgba(154, 186, 100, 0.2);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-neon-green);
+    box-shadow: none;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-neon-green);
+    color: var(--color-bg);
+    box-shadow: 0 0 20px rgba(154, 186, 100, 0.5);
+}
