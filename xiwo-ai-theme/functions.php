@@ -30,7 +30,6 @@ function xiwo_ai_scripts() {
 
     // Theme Styles
     wp_enqueue_style( 'xiwo-ai-style', get_stylesheet_uri(), array(), '1.0.0' );
-    wp_enqueue_style( 'xiwo-ai-main-style', get_template_directory_uri() . '/assets/css/main.css', array('xiwo-ai-style'), '1.0.0' );
 
     // SwiperJS
     wp_enqueue_style( 'swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css', array(), '10.0.0' );
@@ -42,6 +41,49 @@ function xiwo_ai_scripts() {
 
     // Theme Scripts
     wp_enqueue_script( 'xiwo-ai-main-js', get_template_directory_uri() . '/assets/js/main.js', array('swiper-js', 'gsap', 'gsap-scrolltrigger'), '1.0.0', true );
+
+    // Pass dynamic offer data to JS
+    $regions = get_terms( array(
+        'taxonomy'   => 'region',
+        'hide_empty' => false,
+    ) );
+
+    $offer_data = array();
+    foreach ( $regions as $region ) {
+        // Find the most recent offer in this region
+        $args = array(
+            'post_type'      => 'offre',
+            'posts_per_page' => 1,
+            'tax_query'      => array(
+                array(
+                    'taxonomy' => 'region',
+                    'field'    => 'slug',
+                    'terms'    => $region->slug,
+                ),
+            ),
+        );
+        $offers = new WP_Query( $args );
+        if ( $offers->have_posts() ) {
+            $offers->the_post();
+            // Assuming custom fields 'price' and 'brand' exist. Provide fallbacks.
+            $price = get_post_meta( get_the_ID(), 'price', true ) ?: '39,99';
+            $brand = get_post_meta( get_the_ID(), 'brand', true ) ?: 'GOXIWO VIVA';
+
+            $offer_data[$region->slug] = array(
+                'price' => $price,
+                'brand' => $brand,
+                'title' => get_the_title(),
+            );
+        }
+        wp_reset_postdata();
+    }
+
+    // Default fallback if no posts found
+    if(empty($offer_data)) {
+        $offer_data['default'] = array('price' => '39,99', 'brand' => 'GOXIWO VIVA', 'title' => 'Internet illimité<br>Sans engagement');
+    }
+
+    wp_localize_script( 'xiwo-ai-main-js', 'xiwoOfferData', $offer_data );
 }
 add_action( 'wp_enqueue_scripts', 'xiwo_ai_scripts' );
 

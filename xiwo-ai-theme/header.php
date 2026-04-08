@@ -13,7 +13,7 @@
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Aller au contenu principal', 'xiwo-ai' ); ?></a>
 
-    <header id="masthead" class="site-header glass-header">
+    <header id="masthead" class="site-header glass-header sticky-header">
         <div class="header-container">
             <div class="site-branding">
                 <?php
@@ -22,15 +22,8 @@
                 else :
                     ?>
                     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                    <?php
-                    $xiwo_ai_description = get_bloginfo( 'description', 'display' );
-                    if ( $xiwo_ai_description || is_customize_preview() ) :
-                        ?>
-                        <p class="site-description"><?php echo $xiwo_ai_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-                    <?php endif;
-                endif;
-                ?>
-            </div><!-- .site-branding -->
+                <?php endif; ?>
+            </div>
 
             <nav id="site-navigation" class="main-navigation">
                 <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
@@ -48,22 +41,33 @@
                     )
                 );
                 ?>
-            </nav><!-- #site-navigation -->
+            </nav>
 
             <div class="header-actions">
                 <div class="region-selector">
-                    <!-- Simulateur de sélection de région -->
                     <select id="region-select" class="glass-select">
                         <option value="">Sélectionnez votre zone</option>
-                        <option value="hexagone">Hexagone</option>
-                        <option value="guadeloupe">Guadeloupe</option>
-                        <option value="martinique">Martinique</option>
-                        <option value="guyane">Guyane Française</option>
-                        <option value="saint-martin">Saint Martin</option>
-                        <option value="saint-barthelemy">Saint Barthélémy</option>
+                        <?php
+                        $regions = get_terms( array(
+                            'taxonomy'   => 'region',
+                            'hide_empty' => false,
+                        ) );
+                        if ( ! empty( $regions ) && ! is_wp_error( $regions ) ) {
+                            foreach ( $regions as $region ) {
+                                echo '<option value="' . esc_attr( $region->slug ) . '">' . esc_html( $region->name ) . '</option>';
+                            }
+                        } else {
+                            // Fallback static options if DB is empty
+                            ?>
+                            <option value="hexagone">Hexagone</option>
+                            <option value="guadeloupe">Guadeloupe</option>
+                            <option value="martinique">Martinique</option>
+                            <?php
+                        }
+                        ?>
                     </select>
                 </div>
-                <a href="https://subscribe.xiwo.fr/" class="btn-neon" target="_blank" rel="noopener">Espace Abonné</a>
+                <a href="#" class="btn-neon outline">Mon compte</a>
             </div>
         </div>
-    </header><!-- #masthead -->
+    </header>
