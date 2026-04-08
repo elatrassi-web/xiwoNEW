@@ -149,6 +149,23 @@ h1, h2, h3, h4, h5, h6 {
     gap: 20px;
 }
 
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--color-text);
+    transition: all 0.3s ease-in-out;
+}
+
 .glass-select {
     background: rgba(255,255,255,0.05);
     color: #fff;
@@ -475,11 +492,21 @@ h1, h2, h3, h4, h5, h6 {
     .hero-title {
         font-size: 2.5rem;
     }
+    .menu-toggle {
+        display: block;
+    }
     .header-actions {
-        display: none;
+        display: none; /* We'll show region selector inside mobile menu or adapt layout */
     }
     .main-navigation {
         display: none;
+    }
+    .header-actions.mobile-visible {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+        gap: 10px;
     }
     .main-navigation.toggled {
         display: block;

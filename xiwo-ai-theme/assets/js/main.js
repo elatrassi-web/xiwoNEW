@@ -22,10 +22,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const siteNavigation = document.querySelector('#site-navigation');
+    const headerActions = document.querySelector('.header-actions');
 
     if (menuToggle && siteNavigation) {
         menuToggle.addEventListener('click', function() {
             siteNavigation.classList.toggle('toggled');
+            if (headerActions) {
+                // Ensure the region selector and buttons are also visible inside the toggled menu context if needed.
+                // We'll append headerActions to siteNavigation on mobile to make it accessible.
+                if (window.innerWidth <= 768) {
+                    if (!siteNavigation.contains(headerActions)) {
+                        siteNavigation.appendChild(headerActions);
+                        headerActions.classList.add('mobile-visible');
+                    }
+                }
+            }
             const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
             menuToggle.setAttribute('aria-expanded', !isExpanded);
         });

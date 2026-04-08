@@ -15,7 +15,7 @@ get_header();
                 <!-- Slide 1 -->
                 <div class="swiper-slide">
                     <div class="hero-bg-image">
-                        <img src="https://images.unsplash.com/photo-1558008258-3256797b43f3?q=80&w=2000&auto=format&fit=crop" alt="Couple on couch using internet">
+                        <img src="https://image.pollinations.ai/prompt/cyberpunk%20couple%20on%20couch%20watching%20holographic%20screen%20green%20neon%20dark%20cinematic?width=2000&height=1000&nologo=true" alt="Couple on couch using internet">
                         <div class="hero-overlay"></div>
                         <div class="hero-glow-line"></div>
                     </div>
@@ -33,7 +33,7 @@ get_header();
                 <!-- Slide 2 -->
                 <div class="swiper-slide">
                     <div class="hero-bg-image">
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop" alt="Abstract technology">
+                        <img src="https://image.pollinations.ai/prompt/abstract%20hyper%20speed%20fiber%20optic%20cables%20glowing%20green%20neon%20dark%20background%20technology?width=2000&height=1000&nologo=true" alt="Abstract technology">
                         <div class="hero-overlay"></div>
                         <div class="hero-glow-line"></div>
                     </div>
@@ -50,7 +50,7 @@ get_header();
                 <!-- Slide 3 -->
                 <div class="swiper-slide">
                     <div class="hero-bg-image">
-                        <img src="https://images.unsplash.com/photo-1606904890666-613d50bb55e7?q=80&w=2000&auto=format&fit=crop" alt="Technology router">
+                        <img src="https://image.pollinations.ai/prompt/futuristic%20black%20internet%20router%20box%20glowing%20green%20neon%20lights%20dark%20room%20cyberpunk?width=2000&height=1000&nologo=true" alt="Technology router">
                         <div class="hero-overlay"></div>
                         <div class="hero-glow-line"></div>
                     </div>
@@ -129,7 +129,7 @@ get_header();
                     <!-- Router box placeholder -->
                     <div class="router-mockup">
                         <div class="router-glow"></div>
-                        <img src="https://images.unsplash.com/photo-1606904890666-613d50bb55e7?q=80&w=800&auto=format&fit=crop" alt="Goxiwo Box" class="router-img">
+                        <img src="https://image.pollinations.ai/prompt/futuristic%20black%20internet%20router%20box%20glowing%20green%20neon%20lights%20dark%20room%20cyberpunk?width=800&height=500&nologo=true" alt="Goxiwo Box" class="router-img">
                         <div class="router-branding">GOXIWO</div>
                     </div>
                 </div>

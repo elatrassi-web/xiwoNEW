@@ -65,8 +65,8 @@ function xiwo_ai_scripts() {
         $offers = new WP_Query( $args );
         if ( $offers->have_posts() ) {
             $offers->the_post();
-            // Assuming custom fields 'price' and 'brand' exist. Provide fallbacks.
-            $price = get_post_meta( get_the_ID(), 'price', true ) ?: '39,99';
+            // Using standard meta keys based on project specifications. Provide fallbacks.
+            $price = get_post_meta( get_the_ID(), 'prix_mensuel', true ) ?: '39,99';
             $brand = get_post_meta( get_the_ID(), 'brand', true ) ?: 'GOXIWO VIVA';
 
             $offer_data[$region->slug] = array(
