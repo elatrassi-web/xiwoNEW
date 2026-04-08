@@ -32,12 +32,16 @@ function xiwo_ai_scripts() {
     wp_enqueue_style( 'xiwo-ai-style', get_stylesheet_uri(), array(), '1.0.0' );
     wp_enqueue_style( 'xiwo-ai-main-style', get_template_directory_uri() . '/assets/css/main.css', array('xiwo-ai-style'), '1.0.0' );
 
+    // SwiperJS
+    wp_enqueue_style( 'swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css', array(), '10.0.0' );
+    wp_enqueue_script( 'swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', array(), '10.0.0', true );
+
     // GSAP for animations
     wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', array(), '3.12.2', true );
     wp_enqueue_script( 'gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js', array('gsap'), '3.12.2', true );
 
     // Theme Scripts
-    wp_enqueue_script( 'xiwo-ai-main-js', get_template_directory_uri() . '/assets/js/main.js', array('gsap', 'gsap-scrolltrigger'), '1.0.0', true );
+    wp_enqueue_script( 'xiwo-ai-main-js', get_template_directory_uri() . '/assets/js/main.js', array('swiper-js', 'gsap', 'gsap-scrolltrigger'), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'xiwo_ai_scripts' );
 

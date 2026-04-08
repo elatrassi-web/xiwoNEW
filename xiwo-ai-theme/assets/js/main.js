@@ -20,25 +20,30 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     });
 
-    // 2. Initial Hero Animations
-    const heroTl = gsap.timeline();
-
-    // Animate title and text up
-    const fadeUpElements = document.querySelectorAll('.gsap-fade-up');
-    if(fadeUpElements.length > 0) {
-        heroTl.fromTo('.hero-text > *',
-            { y: 50, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out" }
-        );
-    }
-
-    // Animate hero image/mockup from right
-    if(document.querySelector('.gsap-fade-left')) {
-        heroTl.fromTo('.gsap-fade-left',
-            { x: 100, opacity: 0 },
-            { x: 0, opacity: 1, duration: 1, ease: "power3.out" },
-            "-=0.5" // Start slightly before previous animation ends
-        );
+    // 2. Initialize Swiper for Hero Section
+    if (document.querySelector('.heroSwiper')) {
+        const swiper = new Swiper('.heroSwiper', {
+            direction: 'horizontal',
+            loop: true,
+            effect: 'fade', // Smooth crossfade effect
+            fadeEffect: {
+                crossFade: true
+            },
+            speed: 1000,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            grabCursor: true,
+        });
     }
 
     // 3. Scroll Animations for Sections
