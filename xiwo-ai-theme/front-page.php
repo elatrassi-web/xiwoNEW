@@ -55,6 +55,53 @@ get_header();
         </div>
     </section>
 
+    <!-- TERRITOIRES SECTION -->
+    <section class="territories-section gsap-fade-up">
+        <div class="container">
+            <div class="territories-header text-center">
+                <span class="territories-subtitle">NOS TERRITOIRES</span>
+                <h2 class="territories-title">Une présence locale, une exigence globale</h2>
+            </div>
+
+            <div class="territories-grid">
+                <div class="territory-card glass-panel-dark">
+                    <div class="territory-flag">🇬🇵</div>
+                    <h3 class="territory-name">Guadeloupe</h3>
+                    <div class="territory-sub">XIATEL GUADELOUPE</div>
+                    <div class="territory-type glass-pill">Fibre & Sans fil</div>
+                </div>
+
+                <div class="territory-card glass-panel-dark">
+                    <div class="territory-flag">🇲🇶</div>
+                    <h3 class="territory-name">Martinique</h3>
+                    <div class="territory-sub">XIATEL MARTINIQUE</div>
+                    <div class="territory-type glass-pill">Fibre & Sans fil</div>
+                </div>
+
+                <div class="territory-card glass-panel-dark">
+                    <div class="territory-flag">🇸🇽</div>
+                    <h3 class="territory-name">Saint-Martin</h3>
+                    <div class="territory-sub">XIATEL SAINT-MARTIN</div>
+                    <div class="territory-type glass-pill">Fibre & Sans fil</div>
+                </div>
+
+                <div class="territory-card glass-panel-dark">
+                    <div class="territory-flag">🇬🇫</div>
+                    <h3 class="territory-name">Guyane</h3>
+                    <div class="territory-sub">Prochainement</div>
+                    <div class="territory-type glass-pill">Très haut débit</div>
+                </div>
+
+                <div class="territory-card glass-panel-dark">
+                    <div class="territory-flag">🇫🇷</div>
+                    <h3 class="territory-name">France</h3>
+                    <div class="territory-sub">Métropolitaine</div>
+                    <div class="territory-type glass-pill">Fibre</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- COMMENT CA MARCHE SECTION -->
     <section class="how-it-works-section">
         <div class="container">
