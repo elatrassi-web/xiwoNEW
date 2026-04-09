@@ -28,6 +28,10 @@ Text Domain: xiwo-ai
 
 body {
     background-color: var(--color-bg);
+    background-image: url('./assets/images/body-bg.jfif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: var(--color-text);
     font-family: var(--font-body);
     margin: 0;
@@ -257,7 +261,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-actions {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
     max-width: 250px;
 }
@@ -278,7 +282,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
     margin: 0;
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 15px;
 }
@@ -470,7 +474,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Responsive */
 @media (max-width: 992px) {
     .offer-container {
-        flex-direction: column;
+        flex-direction: row;
         padding: 40px 20px;
         text-align: center;
     }
@@ -482,7 +486,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
     .steps-grid {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
     }
     .step-card {
@@ -503,7 +507,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     .header-actions.mobile-visible {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
         margin-top: 15px;
         gap: 10px;
@@ -645,7 +649,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .hero-stats {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
         gap: 1rem;
     }
@@ -655,7 +659,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .hero-main-actions {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .hero-main-actions .btn-neon,
