@@ -8,68 +8,38 @@ get_header();
 
 <main id="primary" class="site-main front-page-main">
 
-    <!-- HERO SECTION (SLIDER) -->
-    <section class="hero-section">
-        <div class="swiper heroSwiper" style="width: 100%; height: 100%;">
-            <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide">
-                    <div class="hero-bg-image">
-                        <img src="https://image.pollinations.ai/prompt/cyberpunk%20couple%20on%20couch%20watching%20holographic%20screen%20green%20neon%20dark%20cinematic?width=2000&height=1000&nologo=true" alt="Couple on couch using internet">
-                        <div class="hero-overlay"></div>
-                        <div class="hero-glow-line"></div>
-                    </div>
-                    <div class="container hero-content" style="height: 100%; display: flex; align-items: center;">
-                        <div class="hero-text gsap-fade-up">
-                            <h1 class="hero-title">Internet sans<br>prise de tête.</h1>
-                            <p class="hero-subtitle">Tu branches. Ça marche.<br>Simple, rapide, sans engagement.</p>
-                            <div class="hero-actions">
-                                <a href="#offres" class="btn-neon">Je passe à GOXIWO</a>
-                                <a href="#eligibilite" class="btn-outline-glass">Tester mon adresse</a>
-                            </div>
-                        </div>
-                    </div>
+    <!-- NEW HERO SECTION -->
+    <section class="hero-section hero-new">
+        <div class="hero-bg-wrapper">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-bg.png" alt="XIWO Background" class="hero-static-bg">
+            <div class="hero-overlay-dark"></div>
+            <div class="hero-overlay-gradient"></div>
+        </div>
+
+        <div class="container hero-content-wrapper">
+            <div class="hero-text-content gsap-fade-up">
+                <h1 class="hero-main-title">
+                    <span class="text-white">XIWO, un réseau présent en</span><br>
+                    <span class="neon-text">France & Caraibe</span>
+                </h1>
+
+                <p class="hero-main-subtitle">
+                    XIWO connecte les territoires là ou les autres s'arretent. Fibre et solutions sans fil déployées avec exigence pour les particuliers et les professionnels
+                </p>
+
+                <div class="hero-stats glass-panel-dark">
+                    <span class="stat-item"><span class="neon-text stat-value">5</span> territoires</span>
+                    <span class="stat-divider">|</span>
+                    <span class="stat-item"><span class="neon-text stat-value">+100 000</span> clients connectés</span>
+                    <span class="stat-divider">|</span>
+                    <span class="stat-item"><span class="neon-text stat-value">1</span> ambition</span>
                 </div>
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                    <div class="hero-bg-image">
-                        <img src="https://image.pollinations.ai/prompt/abstract%20hyper%20speed%20fiber%20optic%20cables%20glowing%20green%20neon%20dark%20background%20technology?width=2000&height=1000&nologo=true" alt="Abstract technology">
-                        <div class="hero-overlay"></div>
-                        <div class="hero-glow-line"></div>
-                    </div>
-                    <div class="container hero-content" style="height: 100%; display: flex; align-items: center;">
-                        <div class="hero-text">
-                            <h1 class="hero-title">Vitesse<br><span class="neon-text">Hyper-Luminique</span>.</h1>
-                            <p class="hero-subtitle">Jusqu'à 5 Gbit/s partagés. Plus de latence, juste la vitesse pure.</p>
-                            <div class="hero-actions">
-                                <a href="#offres" class="btn-neon">Découvrir l'offre</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide 3 -->
-                <div class="swiper-slide">
-                    <div class="hero-bg-image">
-                        <img src="https://image.pollinations.ai/prompt/futuristic%20black%20internet%20router%20box%20glowing%20green%20neon%20lights%20dark%20room%20cyberpunk?width=2000&height=1000&nologo=true" alt="Technology router">
-                        <div class="hero-overlay"></div>
-                        <div class="hero-glow-line"></div>
-                    </div>
-                    <div class="container hero-content" style="height: 100%; display: flex; align-items: center;">
-                        <div class="hero-text">
-                            <h1 class="hero-title">La Nouvelle<br><span class="neon-text">XIWO BOX</span>.</h1>
-                            <p class="hero-subtitle">Le centre de contrôle intelligent de votre domicile connecté.</p>
-                            <div class="hero-actions">
-                                <a href="#offres" class="btn-neon">Voir les box</a>
-                            </div>
-                        </div>
-                    </div>
+
+                <div class="hero-main-actions">
+                    <a href="#eligibilite" class="btn-neon">Tester mon éligibilité dans ma zone</a>
+                    <a href="#reseau" class="btn-outline-glass">Découvrir le réseau</a>
                 </div>
             </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
-            <!-- Add Navigation -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
         </div>
     </section>
 
